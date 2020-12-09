@@ -24,7 +24,11 @@ const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI; //<=Heroku
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, 
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true
+    });
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -42,7 +46,7 @@ db.on('open' , ()=>{});
 app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
@@ -60,21 +64,22 @@ app.engine('jsx', require('express-react-views').createEngine());
 //___________________
 //localhost:3000 
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.send('hello world')
 });
 
 //Index
 app.get('/fattire/', (req, res) => {
-    Product.find({}, (err, allProducts) => {
-        if(!err){
-            console.log(allProducts);
-            res.render('Index', {
-                products: allProducts,
-            })
-        } else {
-            res.send(err)
-        }
-    })
+    res.send('hello world')
+    // Product.find({}, (err, allProducts) => {
+    //     if(!err){
+    //         console.log(allProducts);
+    //         res.render('Index', {
+    //             products: allProducts,
+    //         })
+    //     } else {
+    //         res.send(err)
+    //     }
+    // })
 });
 
 //New
@@ -141,12 +146,6 @@ app.get('/fattire/:id', (req, res) => {
         }
     })
 });
-
-
-
-
-
-
 
 
 //___________________
