@@ -6,7 +6,9 @@ class Index extends React.Component{
     render() {
         return(
             <Layout>
+                <div className="bikeInv"><h1>Fat Tire Bike Inventory</h1></div>
                 <div className="products">
+                    
                         <body>
                             {
                                 this.props.products.map((product, index) =>{

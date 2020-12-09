@@ -17,7 +17,13 @@ class Layout extends React.Component {
                             </a>  
                         </div>
                         <div className="lnav">
-                            <a href="/fattire/new">Submit New Bike</a>
+                            <div className="buttons">
+                                <a href="/fattire/">
+                                    <div className="button">
+                                        Menu
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </header>

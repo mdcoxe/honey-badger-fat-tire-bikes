@@ -16,7 +16,7 @@ class Show extends React.Component{
                         <div className="bigImg"><img src={this.props.product.img}></img>
                         </div>
                         <div className="info">
-                            <div className="desc"><p>Description: {this.props.product.description}</p></div>
+                            <div className="desc"><p>Description:</p> <p> {this.props.product.description}</p></div>
                                 <div className="p-q">
                                     <p>Price: ${this.props.product.price}</p>
                                     <p>Quantity: {quantity ? quantity: 'Backordered' }</p>
