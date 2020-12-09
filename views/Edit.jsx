@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('./Layout/Layout');
+const Layout = require('./layout/Layout');
 
 class Edit extends React.Component {
     render(){
