@@ -137,6 +137,8 @@ ul li ul li {
 }
 .ind-product a {
     text-decoration: none;
+    font-family: 'Bangers';
+    font-size: 1.6em;
     color: black;
 }
 .ind-product{
@@ -146,6 +148,7 @@ ul li ul li {
     background-color: white;
 }
 .products{
+    
     text-align: center;
     display: grid;
     justify-content: center;
