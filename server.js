@@ -64,8 +64,25 @@ app.engine('jsx', require('express-react-views').createEngine());
 //___________________
 //localhost:3000 
 app.get('/' , (req, res) => {
-  res.send('hello world')
+    Product.find({}, (err, allProducts) => {
+        if(!err){
+            console.log(allProducts);
+            res.render('Home', {
+                products: allProducts,
+            })
+        } else {
+            res.send(err)
+        }
+    })
+ 
 });
+app.get('/aboutus' , (req, res) => {
+    res.render('About')
+  });
+  app.get('/events' , (req, res) => {
+    res.render('Events')
+  });
+
 
 //Index
 app.get('/fattire/', (req, res) => {
