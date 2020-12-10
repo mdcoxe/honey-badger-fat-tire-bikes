@@ -26,9 +26,9 @@ class Layout extends React.Component {
         <li><a href="/fattire/">Inventory</a></li>
         <li><a href="/aboutus/">About Us</a></li>
         <li><a href="/events/">Events</a></li>
+        <li><a href="/fattire/new/">Submit a Bike</a></li>
       </ul>
     </li>
-   
   </ul>
 </nav>
                             </div>
